@@ -99,6 +99,7 @@ p {
     transform-origin: 0 50%;
     animation: pulse-green 2s infinite;
     white-space: nowrap;
+    z-index: 100;
 }
 
 @keyframes pulse-green {
