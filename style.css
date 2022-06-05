@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Prompt', sans-serif;
+    overflow-x: hidden;
+
+    color: #fffffe;
+    background: #16161a;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    margin: 0;
+    text-decoration: none;
+    color: #fffffe;
+}
+
+h1 {
+    margin: 0;
+    padding-bottom: .5em;
+    width: 100%;
+    border-bottom: 1px solid #7f5af0;
+}
+
+p {
+    max-width: 30ch;
+}
+
+.card {
+    padding: 2em;
+    border-radius: 25px;
+    margin-bottom: 2em;
+    border: 2px solid #7f5af0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.drag-link {
+    margin-top: 1em;
+    background: #16161a;
+    white-space: nowrap;
+    border: 2px solid #7f5af0;
+    box-shadow: 0 4px #16161a, 0 6px #7f5af0;
+    font-family: 'Prompt', sans-serif;
+    padding: 1em;
+    width: 100%;
+    border-radius: 15px;
+    transition: box-shadow .3s ease, transform .3s ease;
+}
+
+.drag-link:hover {
+    cursor: pointer;
+    box-shadow: 0 1px #16161a, 0 2px #7f5af0;
+    transform: translateY(5px);
+    transition: box-shadow .3s ease, transform .3s ease;
+
+}
+
+.repo-link {
+    background-color: #7f5af0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.repo-link img {
+    width: 35px;
+    position: relative;
+    left: -1px;
+    filter: invert(100%);
+}
+
+.indicator {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2em;
+    padding: .5em 1em;
+    border-radius: 10px;
+    background: #12e78e;
+    font-weight: 500;
+    color: #16161a;
+    transform-origin: 0 50%;
+    animation: pulse-green 2s infinite;
+    white-space: nowrap;
+}
+
+@keyframes pulse-green {
+    0% {
+        transform: scale(0.95) translateX(-50%);
+        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0.7);
+    }
+
+    70% {
+        transform: scale(1) translateX(-50%);
+        box-shadow: 0 0 0 10px rgba(51, 217, 178, 0);
+    }
+
+    100% {
+        transform: scale(0.95) translateX(-50%);
+        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
+    }
+}

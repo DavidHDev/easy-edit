@@ -3,13 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Easy Edit</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <section class="card">
+        <h1>Easy Edit Utility</h1>
+        <p>Drag the link below to your bookmarks bar and use it on any web page!</p>
+        <a class="drag-link" id="target">Drag Me To Your Bookmark Bar!</a>
+    </section>
+    <footer>
+        <a href="https://github.com/DavidHDev/easy-edit" target="_blank" rel="noreferrer" class="repo-link">
+            <img src="https://cdn.icon-icons.com/icons2/1673/PNG/512/githuboutline_110889.png"
+                alt="github octocat logo" />
+        </a>
+    </footer>
+    <script>
+        fetch('edit.js').then(response => response.text()).then(script => {
+            const editTarget = document.querySelector('#target');
+            const newScript = script.replace(/\n\s+/g, '');
 
+            editTarget.href = "javascript:" + script;
+        }).catch(console.error);
+    </script>
 </body>
 
 </html>
